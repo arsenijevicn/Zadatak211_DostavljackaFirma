@@ -6,7 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface KorisniciRepository extends JpaRepository<KorisniciDto, Integer> {
-    //Optional<KorisniciDto> findById(Integer theId);
 
-    //List<KorisniciDto> findAll();
 }
