@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Prijavljivanje</title>
 </head>
 <body>
+<form>
+    <!-- Email input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="email" id="emailUnos" class="form-control" />
+        <label class="form-label" for="emailUnos">E-mail adresa</label>
+    </div>
+
+    <!-- Password input -->
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="lozinkaUnos" class="form-control" />
+        <label class="form-label" for="lozinkaUnos">Lozinka</label>
+    </div>
+
+    <!-- Submit button -->
+    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Prijavi se</button>
+
+    <!-- Register buttons -->
+    <div class="text-center">
+        <p>Nemate nalog? <a href="korisnici/korisnici-forma.html">Registrujte se</a></p>
+
+    </div>
+</form>
 
 </body>
 </html>

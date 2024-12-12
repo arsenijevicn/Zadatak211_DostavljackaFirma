@@ -1,10 +1,14 @@
 package nebojsa.Zadatak211_DostavljackaFirma.controller;
 
 import nebojsa.Zadatak211_DostavljackaFirma.dto.KorisniciDto;
+import nebojsa.Zadatak211_DostavljackaFirma.entity.Korisnici;
+import nebojsa.Zadatak211_DostavljackaFirma.mapper.KorisniciMapper;
 import nebojsa.Zadatak211_DostavljackaFirma.service.KorisnikService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -13,6 +17,7 @@ import java.util.List;
 @RequestMapping("/korisnici")
 public class KorisniciController {
     private KorisnikService korisnikService;
+    private KorisniciMapper korisniciMapper;
 
     public KorisniciController(KorisnikService korisnikService) {
         this.korisnikService = korisnikService;
@@ -26,4 +31,22 @@ public class KorisniciController {
 
         return "korisnici/listakorisnika";
     }
+
+    @GetMapping("/formaZaDodavanje")
+    public String formaZaDodavanje(Model theModel) {
+        Korisnici korisnik = new Korisnici();
+
+        theModel.addAttribute("korisnik", korisnik);
+        return "korisnici/korisnici-forma";
+    }
+
+    @PostMapping("/sacuvaj")
+    public String sacuvajKorisnika(@ModelAttribute("/korisnik") Korisnici korisnik){
+        korisnikService.save(korisniciMapper.toDto(korisnik));
+
+        return "redirect:/korisnici/listakorisnika";
+    }
+
+
+
 }
