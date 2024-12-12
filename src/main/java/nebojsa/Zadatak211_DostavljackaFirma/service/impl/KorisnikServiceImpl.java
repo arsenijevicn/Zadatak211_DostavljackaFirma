@@ -50,7 +50,7 @@ public class KorisnikServiceImpl implements KorisnikService {
         if (result.isPresent()) {
             return result.get();
         } else {
-            throw new RuntimeException("Nije nađen korisnik sa id: " + theId);
+            throw new RuntimeException("Nije nađen ni jedan korisnik sa id: " + theId);
         }
     }
 
