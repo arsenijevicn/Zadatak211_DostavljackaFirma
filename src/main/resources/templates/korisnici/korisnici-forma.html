@@ -16,7 +16,7 @@
 
     <p class="h4 mb-4">Unos novog korisnika</p>
 
-    <form action="#" th:action="@{/korisnik/sacuvaj}" th:object="${korisnik}" method="POST">
+    <form action="#" th:action="@{/korisnici/save}" th:object="${korisnik}" method="POST">
 
         <input type="hidden" th:field="*{id}">
         <input type="text" th:field="*{imeKorisnik}" class="form-control mb-4 w-25" placeholder="Ime">
@@ -24,6 +24,7 @@
         <input type="text" th:field="*{emailKorisnik}" class="form-control mb-4 w-25" placeholder="E-mail Adresa">
         <input type="text" th:field="*{sifraKorisnik}" class="form-control mb-4 w-25" placeholder="Sifra">
         <input type="text" th:field="*{adresaKorisnik}" class="form-control mb-4 w-25" placeholder="Adresa Stanovanja">
+        <input type="text" th:field="*{zonaKorisnik}" class="form-control mb-4 w-25" placeholder="Zona Stanovanja">
         <input type="text" th:field="*{brTelefonaKorisnik}" class="form-control mb-4 w-25" placeholder="Broj Telefona">
 
         <button type="submit" class="btn btn-info col-2">Sacuvaj Korisnika</button>

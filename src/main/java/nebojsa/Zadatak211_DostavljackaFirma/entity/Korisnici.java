@@ -24,10 +24,24 @@ public class Korisnici {
     @Column(name = "adresa_korisnik")
     private String adresaKorisnik;
 
+    @Column(name = "zona_korisnik")
+    private Zona zonaKorisnik;
+
     @Column(name = "br_telefona_korisnik")
     private String brTelefonaKorisnik;
 
     public Korisnici() {
+    }
+
+    public Korisnici(Integer id, String imeKorisnik, String prezimeKorisnik, String emailKorisnik, String sifraKorisnik, String adresaKorisnik, Zona zonaKorisnik, String brTelefonaKorisnik) {
+        this.id = id;
+        this.imeKorisnik = imeKorisnik;
+        this.prezimeKorisnik = prezimeKorisnik;
+        this.emailKorisnik = emailKorisnik;
+        this.sifraKorisnik = sifraKorisnik;
+        this.adresaKorisnik = adresaKorisnik;
+        this.zonaKorisnik = zonaKorisnik;
+        this.brTelefonaKorisnik = brTelefonaKorisnik;
     }
 
     public String getImeKorisnik() {
@@ -68,6 +82,14 @@ public class Korisnici {
 
     public void setAdresaKorisnik(String adresaKorisnik) {
         this.adresaKorisnik = adresaKorisnik;
+    }
+
+    public Zona getZonaKorisnik() {
+        return zonaKorisnik;
+    }
+
+    public void setZonaKorisnik(Zona zonaKorisnik) {
+        this.zonaKorisnik = zonaKorisnik;
     }
 
     public String getBrTelefonaKorisnik() {

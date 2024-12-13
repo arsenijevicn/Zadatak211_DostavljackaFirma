@@ -28,7 +28,6 @@ public class KorisnikServiceImpl implements KorisnikService {
         return korisniciRepository.findAll();
     }
 
-    
 //    public KorisniciDto findById(Integer theId) {
 //        Optional<KorisniciDto> result = korisniciRepository.findById(theId);
 //

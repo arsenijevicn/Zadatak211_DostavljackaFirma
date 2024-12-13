@@ -1,34 +1,36 @@
 package nebojsa.Zadatak211_DostavljackaFirma.dto;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import nebojsa.Zadatak211_DostavljackaFirma.entity.Zona;
+
+@Entity
 public class KorisniciDto {
+    @Id
     private Integer id;
     private String imeKorisnik;
     private String prezimeKorisnik;
     private String emailKorisnik;
     private String sifraKorisnik;
     private String adresaKorisnik;
+    private Zona zonaKorisnik;
     private String brTelefonaKorisnik;
 
     public KorisniciDto() {
     }
 
-    public KorisniciDto(Integer id, String imeKorisnik, String prezimeKorisnik, String emailKorisnik, String sifraKorisnik, String adresaKorisnik, String brTelefonaKorisnik) {
+    public KorisniciDto(Integer id, String imeKorisnik, String prezimeKorisnik, String emailKorisnik, String sifraKorisnik, String adresaKorisnik, Zona zonaKorisnik, String brTelefonaKorisnik) {
         this.id = id;
         this.imeKorisnik = imeKorisnik;
         this.prezimeKorisnik = prezimeKorisnik;
         this.emailKorisnik = emailKorisnik;
         this.sifraKorisnik = sifraKorisnik;
         this.adresaKorisnik = adresaKorisnik;
+        this.zonaKorisnik =zonaKorisnik;
         this.brTelefonaKorisnik = brTelefonaKorisnik;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getImeKorisnik() {
         return imeKorisnik;
@@ -76,5 +78,21 @@ public class KorisniciDto {
 
     public void setBrTelefonaKorisnik(String brTelefonaKorisnik) {
         this.brTelefonaKorisnik = brTelefonaKorisnik;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public Zona getZonaKorisnik() {
+        return zonaKorisnik;
+    }
+
+    public void setZonaKorisnik(Zona zonaKorisnik) {
+        this.zonaKorisnik = zonaKorisnik;
     }
 }

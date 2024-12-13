@@ -23,6 +23,13 @@ public class KorisniciController {
         this.korisnikService = korisnikService;
     }
 
+    @GetMapping("/korisnici-forma")
+    public String showKorisniciForma(Model theModel) {
+        Korisnici korisnik = new Korisnici();
+        theModel.addAttribute("korisnik", korisnik);
+        return "korisnici/korisnici-forma";
+    }
+
     @GetMapping("/listakorisnika")
     public String listaKorisnika(Model theModel) {
         List<KorisniciDto> korisnici = korisnikService.findAll();
@@ -40,7 +47,7 @@ public class KorisniciController {
         return "korisnici/korisnici-forma";
     }
 
-    @PostMapping("/sacuvaj")
+    @PostMapping("/save")
     public String sacuvajKorisnika(@ModelAttribute("/korisnik") Korisnici korisnik){
         korisnikService.save(korisniciMapper.toDto(korisnik));
 
